@@ -52,6 +52,11 @@ body {
   cursor: pointer;
 }
 
+.block-menu span a {
+  text-decoration: none;
+  color: #f1f1f1;
+}
+
 .block-menu span::after {
   content: '';
   display: block;
@@ -65,11 +70,6 @@ body {
 
 .block-menu span:hover::after {
   width: 100%;
-}
-
-.block-menu span a {
-  text-decoration: none;
-  color: #f1f1f1;
 }
 
 /* ******** PORTRAIT ******** */
@@ -102,7 +102,7 @@ body {
   height: 100px;
   border-radius: 50%;
   position: absolute;
-  bottom: 40px;
+  bottom: 80px;
   cursor: pointer;
 }
 .circle-logo img {
@@ -145,7 +145,6 @@ body {
     left: 10px;
     z-index: 10;
   }
-
   .lines-container {
     width: 36px;
     height: 36px;
@@ -155,7 +154,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
   .line {
     width: 100%;
     height: 4px;
@@ -166,7 +164,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
   .line::before {
     content: '';
     position: absolute;
@@ -185,7 +182,6 @@ body {
     height: 4px;
     border-radius: 5px;
   }
-
   .lines-container.active .line::after {
     top: 0;
     transform: rotate(45deg);
@@ -199,4 +195,304 @@ body {
     transform: rotate(-45deg);
     transition: bottom 300ms ease, transform 300ms 300ms ease;
   }
+
+  @media screen and (max-width: 700px) {
+    .btn-round-menu {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .btn-round-menu {
+      width: 50px;
+      height: 50px;
+    }
+    .lines-container {
+      width: 20px;
+      height: 38px;
+    }
+    .line {
+      height: 3px;
+    }
+    .line::before {
+      bottom: 8px;
+      height: 3px;
+    }
+    .line::after {
+      top: 8px;
+      height: 3px;
+    }
+  }
 }
+
+/* ********************************** */
+/* ********** HOME SECTION ********** */
+/* ********************************** */
+
+.home {
+  background: url(./img/home.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  height: 100vh;
+  min-height: 900px;
+  width: calc(100% - 300px);
+  margin-left: auto;
+  position: relative;
+}
+
+h1 {
+  font-size: 80px;
+  font-family: 'Abril Fatface', sans-serif;
+  margin: 0 60px;
+  padding-top: 210px;
+}
+
+.txt-animation {
+  font-size: 30px;
+  margin: 10px 0 10px 60px;
+}
+
+.btn-home {
+  display: inline-flex;
+  width: 200px;
+  height: 50px;
+  text-decoration: none;
+  background: #000;
+  justify-content: center;
+  align-items: center;
+  color: #f1f1f1;
+  margin: 10px 0 0 0;
+  border-radius: 2px;
+  font-size: 18px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn-home:hover {
+  transform: scale(1.02);
+}
+
+.btn-home1 {
+  margin: 10px 0 0 60px;
+}
+
+.btn-home2 {
+  background: transparent;
+  border: 2px solid black;
+  color: black;
+  font-weight: 700;
+}
+
+.medias {
+  display: flex;
+  margin-left: 60px;
+  margin-top: 30px;
+}
+
+.media {
+  width: 60px;
+  height: 60px;
+  background: black;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.media2 {
+  background: transparent;
+  border: 2px solid #333;
+}
+
+.icon-medias {
+  width: 30px;
+}
+
+.btn-round {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  bottom: 20px;
+  left: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 #333;
+  background: #333;
+  animation: pulse 1.3s infinite;
+}
+
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.01);
+  }
+}
+
+.logo-btn-round-home {
+  width: 35px;
+}
+
+/* ****** HOME SECTION MEDIA QUERIES ****** */
+
+@media screen and (max-width: 1300px) {
+  .home {
+    width: 100%;
+    background-position: center;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .home {
+    height: 700px;
+    min-height: 0;
+  }
+  h1 {
+    font-size: 70px;
+    margin: 0 30px 0 30px;
+    padding-top: 100px;
+  }
+  .home p {
+    margin: 20px 0 20px 30px;
+  }
+  .btn-home1 {
+    margin: 10px 0 0 30px;
+  }
+  .medias {
+    margin-left: 30px;
+  }
+  .btn-round {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .home {
+    height: 600px;
+  }
+  h1 {
+    font-size: 50px;
+    margin: 0 30px;
+  }
+  .home p {
+    font-size: 20px;
+  }
+  .btn-round-menu {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 35px;
+  }
+  .home p {
+    font-size: 16px;
+  }
+  .btn-home {
+    width: 120px;
+    font-size: 13px;
+    height: 40px;
+    margin: 10px 0 0 5px;
+  }
+  .btn-home1 {
+    margin: 10px 0 0 30px;
+  }
+  .media {
+    width: 40px;
+    height: 40px;
+  }
+  .icon-medias {
+    width: 20px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .btn-round-menu {
+    width: 50px;
+    height: 50px;
+  }
+  .lines-container {
+    width: 20px;
+    height: 38px;
+  }
+  .line {
+    height: 3px;
+  }
+  .line::before {
+    bottom: 8px;
+    height: 3px;
+  }
+  .line::after {
+    top: 8px;
+    height: 3px;
+  }
+  .home {
+    height: 500px;
+  }
+  h1 {
+    margin: 0 30px 0 5px;
+    padding-top: 120px;
+  }
+  .home p {
+    margin: 30px 0 0 5px;
+  }
+  .btn-home {
+    width: 100px;
+    font-size: 12px;
+    height: 35px;
+    margin: 30px 0 0 5px;
+  }
+  .medias {
+    margin-top: 30px;
+    margin-left: 5px;
+  }
+  .icon-medias {
+    width: 20px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .txt-animation {
+    font-size: 15px !important;
+  }
+}
+@media screen and (max-width: 370px) {
+  .txt-animation {
+    font-size: 13px !important;
+  }
+}
+
+/* *********************************** */
+/* ********** ABOUT SECTION ********** */
+/* *********************************** */
+
+
+/* *********************************** */
+/* ******** PORTFOLIO SECTION ******** */
+/* *********************************** */
+
+
+/* *********************************** */
+/* ********* SKILLS SECTION ********** */
+/* *********************************** */
+
+
+/* *********************************** */
+/* ******** EXPERIENCE SECTION ******* */
+/* *********************************** */
+
+
+/* *********************************** */
+/* ******** PARALLAX SECTION ********* */
+/* *********************************** */
+
+
+/* *********************************** */
+/* ********* CONTACT SECTION ********* */
+/* *********************************** */
