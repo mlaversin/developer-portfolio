@@ -19,10 +19,6 @@ if (window.matchMedia('(max-width: 1300px)')) {
   });
 }
 
-
-
-
-
 // Typewriter effect on Home Section
 
 const txtAnim = document.querySelector('.txt-animation');
@@ -84,10 +80,6 @@ typewriter
   .typeString('<span style="color: #27ae60;"> VueJS</span> !')
   .start();
 
-
-
-
-
 // Contact - Input animation
 
 const input_fields = document.querySelectorAll('input');
@@ -104,9 +96,7 @@ for (let i = 0; i < input_fields.length; i++) {
   });
 }
 
-
-
-// Home - GSAP + ScrollMagic Animation
+// Home section - GSAP + ScrollMagic Animation
 
 const navbar = document.querySelector('.nav-left');
 const title = document.querySelector('h1');
@@ -114,16 +104,43 @@ const btn = document.querySelectorAll('.btn-home');
 const btnMedias = document.querySelectorAll('.media');
 const btnRondAccueil = document.querySelector('.btn-round');
 
+const TL1 = gsap.timeline({ paused: true });
 
-const TL1 = gsap.timeline({paused: true});
-
-TL1 
-.to(navbar, {left: '0px', ease: Power3.easeOut, duration: 0.6})
-.from(title, {y: -50, opacity: 0, ease: Power3.easeOut, duration: 0.4})
-.staggerFrom(btn, 1, {opacity: 0}, 0.2, '-=0.30')
-.staggerFrom(btnMedias, 1, {opacity: 0}, 0.2, '-=0.75')
-.from(btnRondAccueil, {y: -50, opacity:0, ease: Power3.easeOut, duration: 0.4}, '-=1')
+TL1.to(navbar, { left: '0px', ease: Power3.easeOut, duration: 0.6 })
+  .from(title, { y: -50, opacity: 0, ease: Power3.easeOut, duration: 0.4 })
+  .staggerFrom(btn, 1, { opacity: 0 }, 0.2, '-=0.30')
+  .staggerFrom(btnMedias, 1, { opacity: 0 }, 0.2, '-=0.75')
+  .from(
+    btnRondAccueil,
+    { y: -50, opacity: 0, ease: Power3.easeOut, duration: 0.4 },
+    '-=1'
+  );
 
 window.addEventListener('load', () => {
-    TL1.play();
+  TL1.play();
+});
+
+// About section - GSAP + ScrollMagic Animation
+
+const aboutContainer = document.querySelector('.about');
+const aboutTitle = document.querySelector('.about-title');
+const aboutLeft = document.querySelector('.about-left');
+const aboutList = document.querySelectorAll('.list-item');
+
+const tlabout = new TimelineMax();
+
+tlabout
+  .from(aboutTitle, { y: -200, opacity: 0, duration: 0.6 })
+  .from(aboutLeft, { y: -20, opacity: 0, duration: 0.6 }, '-=0.5')
+  .staggerFrom(aboutList, 1, { opacity: 0 }, 0.2, '-=0.5');
+
+const controller = new ScrollMagic.Controller();
+
+const scene = new ScrollMagic.Scene({
+  triggerElement: aboutContainer,
+  triggerHook: 0.5,
+  reverse: false,
 })
+  .setTween(tlabout)
+  // .addIndicators()
+  .addTo(controller);
