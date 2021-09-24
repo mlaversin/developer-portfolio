@@ -737,6 +737,143 @@ h1 {
 /* ********* SKILLS SECTION ********** */
 /* *********************************** */
 
+.skills {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 200px;
+  border-bottom: 1px dashed #333;
+  background: #485563;
+  background-image: linear-gradient(to right, #29323c, #485563);
+  color: #f1f1f1;
+  position: relative;
+  z-index: -1;
+}
+
+.skills-title {
+  font-size: 40px;
+  text-align: center;
+  margin: 80px 0 90px 0;
+  padding-left: 300px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template: repeat(3,80px) / repeat(2, 500px);
+  grid-gap: 50px;
+  padding-left: 300px;
+}
+
+.skill-cont {
+  position: relative;
+}
+
+.skill-bar {
+  height: 15px;
+  background: rgb(167,146,243);
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.grey-bar {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  bottom: 0;
+  width: 500px;
+  height: 15px;
+  background: rgb(216,216,216);
+  border-radius: 5px;
+}
+.sb1 {
+  width: 90%;
+}
+.sb2 {
+  width: 75%;
+  background: rgb(243,237,146);
+}
+.sb3 {
+  width: 70%;
+  background: rgb(243,237,146);
+}
+.sb4 {
+  width: 80%;
+}
+.sb5 {
+  width: 70%;
+}
+.sb6 {
+  width: 80%;
+  background: rgb(243,237,146);
+}
+.skill-label {
+  font-size: 24px;
+}
+/* Medias skill */
+
+@media screen and (max-width: 1400px) {
+  .skills-grid{
+      grid-template: repeat(3,80px) / repeat(2,450px);
+  }
+  .grey-bar {
+      width: 450px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+
+  .skills {
+      padding-left: 0;
+  }
+  .skills-title {
+      padding-left: 0;
+  }
+  .skills-grid {
+      grid-template: repeat(6,80px) / 600px;
+      padding-left: 0;
+  }
+  .grey-bar {
+      width: 600px;
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+
+  .skills-grid {
+      grid-template: repeat(6,80px) / 400px;
+  }
+  .grey-bar {
+      width: 400px
+  }
+
+}
+@media screen and (max-width: 450px) {
+
+  .skills {
+      padding-bottom: 100px;
+  }
+  .skills-title {
+      font-size: 30px;
+      margin: 50px 0 60px 0;
+  }
+  .skill-label {
+      font-size: 20px;
+  }
+  .skill-grid{
+      grid-template: repeat(6,80px) / 300px;
+      grid-gap: 40px;
+  }
+  .grey-bar {
+      width: 300px;
+  }
+}
+
+
 /* *********************************** */
 /* ******** EXPERIENCE SECTION ******* */
 /* *********************************** */
