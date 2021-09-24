@@ -96,7 +96,7 @@ for (let i = 0; i < input_fields.length; i++) {
   });
 }
 
-// Home section - GSAP + ScrollMagic Animation
+// Home section animations
 
 const navbar = document.querySelector('.nav-left');
 const title = document.querySelector('h1');
@@ -120,7 +120,10 @@ window.addEventListener('load', () => {
   TL1.play();
 });
 
-// About section - GSAP + ScrollMagic Animation
+
+
+
+// About section animations
 
 const aboutContainer = document.querySelector('.about');
 const aboutTitle = document.querySelector('.about-title');
@@ -144,3 +147,63 @@ const scene = new ScrollMagic.Scene({
   .setTween(tlabout)
   // .addIndicators()
   .addTo(controller);
+
+
+
+
+// Portfolio Animation
+
+const portfolioContainer = document.querySelector('.portfolio')
+const titlePortfolio = document.querySelector('.portfolio-title')
+const itemPortfolio = document.querySelectorAll('.wave1')
+
+const tlPortfolio1 = new TimelineMax();
+
+tlPortfolio1
+.from(titlePortfolio, {y: -50, opacity: 0, duration: 0.5})
+.staggerFrom(itemPortfolio, 1, {opacity: 0}, 0.2, '-=0.5')
+
+const scene2 = new ScrollMagic.Scene({
+    triggerElement: portfolioContainer,
+    triggerHook: 0.5,
+    reverse: false
+})
+.setTween(tlPortfolio1)
+// .addIndicators()
+.addTo(controller)
+
+// wave 2 
+
+const itemPortfolio2 = document.querySelectorAll('.wave2')
+
+const tlPortfolio2 = new TimelineMax();
+
+tlPortfolio2
+.staggerFrom(itemPortfolio2, 1, {opacity: 0}, 0.2, '-=0.5')
+
+const scene3 = new ScrollMagic.Scene({
+    triggerElement: itemPortfolio,
+    triggerHook: 0.2,
+    reverse: false
+})
+.setTween(tlPortfolio2)
+// .addIndicators()
+.addTo(controller)
+
+// wave 3
+
+const itemPortfolio3 = document.querySelectorAll('.wave3')
+
+const tlPortfolio3 = new TimelineMax();
+
+tlPortfolio3
+.staggerFrom(itemPortfolio3, 1, {opacity: 0}, 0.2, '-=0.5')
+
+const scene4 = new ScrollMagic.Scene({
+    triggerElement: itemPortfolio2,
+    triggerHook: 0.2,
+    reverse: false
+})
+.setTween(tlPortfolio3)
+// .addIndicators()
+.addTo(controller)
