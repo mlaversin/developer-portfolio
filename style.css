@@ -762,7 +762,7 @@ h1 {
 
 .skills-grid {
   display: grid;
-  grid-template: repeat(3,80px) / repeat(2, 500px);
+  grid-template: repeat(3, 80px) / repeat(2, 500px);
   grid-gap: 50px;
   padding-left: 300px;
 }
@@ -773,7 +773,7 @@ h1 {
 
 .skill-bar {
   height: 15px;
-  background: rgb(167,146,243);
+  background: rgb(167, 146, 243);
   border-radius: 5px;
   position: absolute;
   left: 0;
@@ -786,7 +786,7 @@ h1 {
   bottom: 0;
   width: 500px;
   height: 15px;
-  background: rgb(216,216,216);
+  background: rgb(216, 216, 216);
   border-radius: 5px;
 }
 .sb1 {
@@ -794,11 +794,11 @@ h1 {
 }
 .sb2 {
   width: 75%;
-  background: rgb(243,237,146);
+  background: rgb(243, 237, 146);
 }
 .sb3 {
   width: 70%;
-  background: rgb(243,237,146);
+  background: rgb(243, 237, 146);
 }
 .sb4 {
   width: 80%;
@@ -807,8 +807,8 @@ h1 {
   width: 70%;
 }
 .sb6 {
-  width: 80%;
-  background: rgb(243,237,146);
+  width: 65%;
+  background: rgb(243, 237, 146);
 }
 .skill-label {
   font-size: 24px;
@@ -816,63 +816,57 @@ h1 {
 /* Medias skill */
 
 @media screen and (max-width: 1400px) {
-  .skills-grid{
-      grid-template: repeat(3,80px) / repeat(2,450px);
+  .skills-grid {
+    grid-template: repeat(3, 80px) / repeat(2, 450px);
   }
   .grey-bar {
-      width: 450px;
+    width: 450px;
   }
 }
 
 @media screen and (max-width: 1300px) {
-
   .skills {
-      padding-left: 0;
+    padding-left: 0;
   }
   .skills-title {
-      padding-left: 0;
+    padding-left: 0;
   }
   .skills-grid {
-      grid-template: repeat(6,80px) / 600px;
-      padding-left: 0;
+    grid-template: repeat(6, 80px) / 600px;
+    padding-left: 0;
   }
   .grey-bar {
-      width: 600px;
+    width: 600px;
   }
-
 }
 
 @media screen and (max-width: 700px) {
-
   .skills-grid {
-      grid-template: repeat(6,80px) / 400px;
+    grid-template: repeat(6, 80px) / 400px;
   }
   .grey-bar {
-      width: 400px
+    width: 400px;
   }
-
 }
 @media screen and (max-width: 450px) {
-
   .skills {
-      padding-bottom: 100px;
+    padding-bottom: 100px;
   }
   .skills-title {
-      font-size: 30px;
-      margin: 50px 0 60px 0;
+    font-size: 30px;
+    margin: 50px 0 60px 0;
   }
   .skill-label {
-      font-size: 20px;
+    font-size: 20px;
   }
-  .skill-grid{
-      grid-template: repeat(6,80px) / 300px;
-      grid-gap: 40px;
+  .skill-grid {
+    grid-template: repeat(6, 80px) / 300px;
+    grid-gap: 40px;
   }
   .grey-bar {
-      width: 300px;
+    width: 300px;
   }
 }
-
 
 /* *********************************** */
 /* ******** EXPERIENCE SECTION ******* */
