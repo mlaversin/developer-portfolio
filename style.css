@@ -231,7 +231,7 @@ body {
 /* ********************************** */
 
 .home {
-  background: url(./img/home.jpg);
+  background: url('./img/home.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
@@ -554,7 +554,7 @@ h1 {
   display: inline;
 }
 
-/* Medias about */
+/* ****** ABOUT - MEDIA QUERIES ****** */
 
 @media screen and (max-width: 1300px) {
   .about-container {
@@ -703,7 +703,8 @@ h1 {
   transition: transform 0.3s 0.1s linear;
   transform: translateX(400px);
 }
-/* Media portfolio */
+
+/* ****** PORTFOLIO - MEDIA QUERIES ****** */
 
 @media screen and (max-width: 1300px) {
   .portfolio-container {
@@ -813,7 +814,8 @@ h1 {
 .skill-label {
   font-size: 24px;
 }
-/* Medias skill */
+
+/* ****** SKILLS - MEDIA QUERIES ****** */
 
 @media screen and (max-width: 1400px) {
   .skills-grid {
@@ -872,9 +874,198 @@ h1 {
 /* ******** EXPERIENCE SECTION ******* */
 /* *********************************** */
 
+.experience {
+  width: calc(100% - 300px);
+  height: auto;
+  margin-left: auto;
+  padding-bottom: 100px;
+}
+
+.experience-title {
+  text-align: center;
+  margin: 70px 0;
+  font-size: 40px;
+  color: #333;
+}
+
+.experience-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.vertical-bar {
+  height: 1000px;
+  width: 5px;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  left: -30px;
+}
+
+.circle-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  background: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-icon img {
+  width: 25px;
+}
+
+.flex-cont-block-exp {
+  width: 800px;
+  flex-shrink: 1;
+  height: 1000px;
+  position: relative;
+}
+
+.block {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 37.5px;
+  cursor: pointer;
+  border: 1px solid #333;
+  position: relative;
+}
+
+.block-content {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  background: white;
+  transition: transform 0.25s ease-in-out;
+  position: relative;
+  transform: translate(10px, -10px);
+}
+
+.block-content:hover {
+  transform: translate(0, 0);
+}
+
+.block1 {
+  background: #fb97a0;
+}
+
+.block2 {
+  background: #bfe2ca;
+}
+
+.block3 {
+  background: #a6daef;
+}
+
+.block4 {
+  background: #d0e2ec;
+}
+
+.title-block {
+  font-family: 'Abril Fatface', sans-serif;
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
+/* ****** EXPERIENCE - MEDIA QUERIES ****** */
+
+@media screen and (max-width: 1300px) {
+  .experience {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 950px) {
+  .vertical-bar {
+    height: 1200px;
+  }
+  .block {
+    height: 250px;
+    margin-bottom: 37.5px;
+  }
+  .vertical-bar {
+    margin-left: 60px;
+  }
+  .flex-cont-block-exp {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .txt-block {
+    font-size: 16px;
+  }
+  .block {
+    height: 400px;
+  }
+  .vertical-bar {
+    height: 1800px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .txt-block {
+    font-size: 15px;
+  }
+}
+
 /* *********************************** */
 /* ******** PARALLAX SECTION ********* */
 /* *********************************** */
+
+.parallax {
+  width: 100%;
+  height: 250px;
+  background: url('./img/home.jpg') no-repeat right / cover fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px dashed #333;
+  border-bottom: 1px dashed #333;
+}
+.parallax-txt {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0 50px;
+}
+.parallax-txt:nth-child(1) {
+  padding-left: 300px;
+}
+
+@media screen and (max-width: 1300px) {
+  .parallax-txt {
+      font-size: 25px;
+      margin: 0 30px;
+  }
+  .parallax-txt:nth-child(1) {
+      padding-left: 0px;
+  }
+}
+
+/* ****** PARALLAX - MEDIA QUERIES ****** */
+
+@media screen and (max-width: 700px) {
+  .parallax-txt {
+    font-size: 22px;
+    margin: 0 25px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .section-parallax {
+      flex-direction: column;
+  }
+  .parallax-txt {
+      font-size: 20px;
+      margin: 20px 0px;
+  }
+}
 
 /* *********************************** */
 /* ********* CONTACT SECTION ********* */
