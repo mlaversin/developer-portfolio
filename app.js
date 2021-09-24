@@ -19,6 +19,10 @@ if (window.matchMedia('(max-width: 1300px)')) {
   });
 }
 
+
+
+
+
 // Typewriter effect on Home Section
 
 const txtAnim = document.querySelector('.txt-animation');
@@ -80,6 +84,10 @@ typewriter
   .typeString('<span style="color: #27ae60;"> VueJS</span> !')
   .start();
 
+
+
+
+
 // Contact - Input animation
 
 const input_fields = document.querySelectorAll('input');
@@ -95,3 +103,27 @@ for (let i = 0; i < input_fields.length; i++) {
     }
   });
 }
+
+
+
+// Home - GSAP + ScrollMagic Animation
+
+const navbar = document.querySelector('.nav-left');
+const title = document.querySelector('h1');
+const btn = document.querySelectorAll('.btn-home');
+const btnMedias = document.querySelectorAll('.media');
+const btnRondAccueil = document.querySelector('.btn-round');
+
+
+const TL1 = gsap.timeline({paused: true});
+
+TL1 
+.to(navbar, {left: '0px', ease: Power3.easeOut, duration: 0.6})
+.from(title, {y: -50, opacity: 0, ease: Power3.easeOut, duration: 0.4})
+.staggerFrom(btn, 1, {opacity: 0}, 0.2, '-=0.30')
+.staggerFrom(btnMedias, 1, {opacity: 0}, 0.2, '-=0.75')
+.from(btnRondAccueil, {y: -50, opacity:0, ease: Power3.easeOut, duration: 0.4}, '-=1')
+
+window.addEventListener('load', () => {
+    TL1.play();
+})
