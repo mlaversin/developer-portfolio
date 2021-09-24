@@ -79,3 +79,19 @@ typewriter
   .deleteChars(13)
   .typeString('<span style="color: #27ae60;"> VueJS</span> !')
   .start();
+
+// Contact - Input animation
+
+const input_fields = document.querySelectorAll('input');
+
+for (let i = 0; i < input_fields.length; i++) {
+  let field = input_fields[i];
+
+  field.addEventListener('input', (e) => {
+    if (e.target.value !== '') {
+      e.target.parentNode.classList.add('animation');
+    } else if (e.target.value == '') {
+      e.target.parentNode.classList.remove('animation');
+    }
+  });
+}

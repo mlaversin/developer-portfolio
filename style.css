@@ -1040,11 +1040,11 @@ h1 {
 
 @media screen and (max-width: 1300px) {
   .parallax-txt {
-      font-size: 25px;
-      margin: 0 30px;
+    font-size: 25px;
+    margin: 0 30px;
   }
   .parallax-txt:nth-child(1) {
-      padding-left: 0px;
+    padding-left: 0px;
   }
 }
 
@@ -1059,14 +1059,151 @@ h1 {
 
 @media screen and (max-width: 550px) {
   .section-parallax {
-      flex-direction: column;
+    flex-direction: column;
   }
   .parallax-txt {
-      font-size: 20px;
-      margin: 20px 0px;
+    font-size: 20px;
+    margin: 20px 0px;
   }
 }
 
 /* *********************************** */
 /* ********* CONTACT SECTION ********* */
 /* *********************************** */
+
+.contact {
+  width: 100%;
+  height: auto;
+}
+.contact h2 {
+  text-align: center;
+  color: #333;
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 50px;
+  padding: 70px 0 0 300px;
+}
+.contact h2 strong {
+  font-weight: 900;
+}
+
+.form-container {
+  margin: 0 auto;
+  width: 70%;
+  padding-left: 300px;
+}
+.form-group {
+  position: relative;
+  display: flex;
+  margin-bottom: 45px;
+}
+.form-group label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 20px;
+  transition: 0.4s ease-out;
+}
+.form-group input {
+  display: block;
+  width: 100%;
+  padding: 10px 0px;
+  border: none;
+  outline: none;
+  background: none;
+  border-bottom: 3px solid #aaa;
+  color: #666;
+  font-size: 20px;
+  transition: 0.4s ease-out;
+}
+textarea {
+  width: 100%;
+  height: 200px;
+  border: none;
+  border: 3px solid #aaa;
+  border-radius: 3px;
+  padding: 5px;
+  resize: none;
+  outline: none;
+  font-size: 20px;
+  transition: 0.4s all ease-out;
+  background: #f1f1f1;
+}
+textarea::placeholder {
+  font-size: 20px;
+  opacity: 0.5;
+}
+textarea:focus {
+  border-color: #8b97d7;
+}
+
+.form-group:nth-child(4) {
+  margin-bottom: 25px;
+  justify-content: flex-start;
+}
+
+.form-group .button-sub {
+  display: block;
+  width: auto;
+  padding: 15px 60px;
+  border: 3px solid rgb(144, 144, 144);
+  border-radius: 999px;
+  background-image: linear-gradient(
+    to right,
+    transparent 50%,
+    rgb(65, 65, 65) 50%,
+    rgb(134, 134, 134)
+  );
+  background-size: 200%;
+  color: #333;
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.form-group .button-sub:hover {
+  color: #fff;
+  background-position: 100%;
+  border: 3px solid #fff;
+}
+
+/* ****** CONTACT - MEDIA QUERIES ****** */
+
+@media screen and (max-width: 1300px) {
+  .contact h2 {
+    padding: 70px 0 0 0;
+  }
+  .form-container {
+    padding-left: 0;
+  }
+  .form-group:nth-child(4) {
+    justify-content: center;
+  }
+}
+
+/* ****** CONTACT - INPUT ANIMATION ****** */
+
+.form-group:focus-within label,
+.form-group.animation label {
+  top: 0px;
+  transform: translateY(-100%);
+  color: #8b97d7;
+}
+
+/* *********************************** */
+/* ************* FOOTER ************** */
+/* *********************************** */
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding-top: 100px;
+  padding-left: 300px;
+}
+
+@media screen and (max-width: 1300px) {
+  footer {
+    padding-left: 0px;
+  }
+}
