@@ -90,9 +90,9 @@ body {
   box-shadow: 26px 26px 53px #292929, -26px -26px 53px #3d3d3d;
 }
 .circle-portrait img {
-  width: 160px;
+  width: 100px;
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -481,6 +481,7 @@ h1 {
   border-bottom: 1px dashed #333;
   color: #e7e7e7;
 }
+
 .about-background {
   background: #485563;
   background-image: linear-gradient(to right, #29323c, #485563);
@@ -507,6 +508,7 @@ h1 {
   flex-shrink: 0;
   padding-left: 300px;
 }
+
 .about-left {
   width: 600px;
   flex-shrink: 0;
@@ -514,15 +516,18 @@ h1 {
   padding-left: 120px;
   padding-top: 20px;
 }
+
 .about-left h3 {
   text-align: center;
   font-size: 25px;
   letter-spacing: 2px;
 }
+
 .about-left hr {
   width: 60px;
   margin: 0 auto 20px auto;
 }
+
 .about-left p {
   text-align: justify;
 }
@@ -533,14 +538,17 @@ h1 {
   display: flex;
   justify-content: flex-start;
 }
+
 .about-list {
   list-style-type: none;
   padding: 10px 0 50px 110px;
 }
+
 .number-style {
   font-family: 'Abril Fatface', sans-serif;
   font-size: 40px;
 }
+
 .txt-list {
   font-size: 27px;
   display: inline;
@@ -580,7 +588,6 @@ h1 {
     font-size: 20px;
     letter-spacing: 0px;
   }
-
   .about-left p {
     font-size: 16px;
   }
@@ -616,6 +623,115 @@ h1 {
 /* *********************************** */
 /* ******** PORTFOLIO SECTION ******** */
 /* *********************************** */
+
+.portfolio {
+  width: 100%;
+}
+.portfolio-title {
+  text-align: center;
+  padding: 50px 0;
+  font-size: 50px;
+  padding-left: 300px;
+}
+
+.portfolio-container {
+  width: 100%;
+  height: auto;
+  margin: 0 auto 100px auto;
+  padding-left: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.port-item {
+  margin: 20px;
+  width: 420px;
+  height: 400px;
+  background: #f0f2f0;
+  color: #333;
+  transition: transform 0.3s ease-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.port-item:hover {
+  transform: translateY(-5px);
+}
+.cont-img-port {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+.cont-img-port img {
+  width: 100%;
+  height: auto;
+}
+.port-item h3 {
+  padding: 10px 10px 0;
+  font-size: 22px;
+}
+.port-item p {
+  padding: 10px 10px 0;
+}
+.btn-projects {
+  display: block;
+  margin: 10px;
+  width: 180px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #333;
+  text-decoration: none;
+  border: 1px solid #333;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-projects::after {
+  content: '';
+  height: 240px;
+  width: 100px;
+  background: rgba(255, 255, 255, 0.4);
+  display: block;
+  position: absolute;
+  left: -150px;
+  top: -50px;
+  transform: rotate(-45deg);
+}
+.btn-projects:hover::after {
+  transition: transform 0.3s 0.1s linear;
+  transform: translateX(400px);
+}
+/* Media portfolio */
+
+@media screen and (max-width: 1300px) {
+  .portfolio-container {
+    padding-left: 0;
+  }
+  .portfolio-title {
+    font-size: 40px;
+    margin: 50px 0 70px;
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  .portfolio-title {
+    margin: 10px 0;
+    padding: 30px 0;
+  }
+  .port-item {
+    height: 420px;
+  }
+  .cont-img-port {
+    height: auto;
+  }
+}
+@media screen and (max-width: 340px) {
+  .port-item {
+    height: 380px;
+  }
+}
 
 /* *********************************** */
 /* ********* SKILLS SECTION ********** */
