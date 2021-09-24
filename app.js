@@ -1,4 +1,6 @@
-// Burger menu animation
+// *******************************************
+// ********** Burger Menu Animations *********
+// *******************************************
 
 const btnMenu = document.querySelector('.btn-round-menu');
 const nav = document.querySelector('.nav-left');
@@ -19,7 +21,9 @@ if (window.matchMedia('(max-width: 1300px)')) {
   });
 }
 
-// Typewriter effect on Home Section
+// *******************************************
+// ******** Typewriting effect on Home *******
+// *******************************************
 
 const txtAnim = document.querySelector('.txt-animation');
 
@@ -80,7 +84,9 @@ typewriter
   .typeString('<span style="color: #27ae60;"> VueJS</span> !')
   .start();
 
-// Contact - Input animation
+// *******************************************
+// ******** Contact Input Animations *********
+// *******************************************
 
 const input_fields = document.querySelectorAll('input');
 
@@ -96,7 +102,9 @@ for (let i = 0; i < input_fields.length; i++) {
   });
 }
 
-// Home section animations
+// *******************************************
+// ******** Home Section Animations **********
+// *******************************************
 
 const navbar = document.querySelector('.nav-left');
 const title = document.querySelector('h1');
@@ -120,10 +128,9 @@ window.addEventListener('load', () => {
   TL1.play();
 });
 
-
-
-
-// About section animations
+// *******************************************
+// ******** About Aection animations *********
+// *******************************************
 
 const aboutContainer = document.querySelector('.about');
 const aboutTitle = document.querySelector('.about-title');
@@ -148,62 +155,86 @@ const scene = new ScrollMagic.Scene({
   // .addIndicators()
   .addTo(controller);
 
+// *******************************************
+// ******* Portfolio Section Animations ******
+// *******************************************
 
-
-
-// Portfolio Animation
-
-const portfolioContainer = document.querySelector('.portfolio')
-const titlePortfolio = document.querySelector('.portfolio-title')
-const itemPortfolio = document.querySelectorAll('.wave1')
+const portfolioContainer = document.querySelector('.portfolio');
+const titlePortfolio = document.querySelector('.portfolio-title');
+const itemPortfolio = document.querySelectorAll('.wave1');
 
 const tlPortfolio1 = new TimelineMax();
 
 tlPortfolio1
-.from(titlePortfolio, {y: -50, opacity: 0, duration: 0.5})
-.staggerFrom(itemPortfolio, 1, {opacity: 0}, 0.2, '-=0.5')
+  .from(titlePortfolio, { y: -50, opacity: 0, duration: 0.5 })
+  .staggerFrom(itemPortfolio, 1, { opacity: 0 }, 0.2, '-=0.5');
 
 const scene2 = new ScrollMagic.Scene({
-    triggerElement: portfolioContainer,
-    triggerHook: 0.5,
-    reverse: false
+  triggerElement: portfolioContainer,
+  triggerHook: 0.5,
+  reverse: false,
 })
-.setTween(tlPortfolio1)
-// .addIndicators()
-.addTo(controller)
+  .setTween(tlPortfolio1)
+  // .addIndicators()
+  .addTo(controller);
 
-// wave 2 
+// wave 2
 
-const itemPortfolio2 = document.querySelectorAll('.wave2')
+const itemPortfolio2 = document.querySelectorAll('.wave2');
 
 const tlPortfolio2 = new TimelineMax();
 
-tlPortfolio2
-.staggerFrom(itemPortfolio2, 1, {opacity: 0}, 0.2, '-=0.5')
+tlPortfolio2.staggerFrom(itemPortfolio2, 1, { opacity: 0 }, 0.2, '-=0.5');
 
 const scene3 = new ScrollMagic.Scene({
-    triggerElement: itemPortfolio,
-    triggerHook: 0.2,
-    reverse: false
+  triggerElement: itemPortfolio,
+  triggerHook: 0.2,
+  reverse: false,
 })
-.setTween(tlPortfolio2)
-// .addIndicators()
-.addTo(controller)
+  .setTween(tlPortfolio2)
+  // .addIndicators()
+  .addTo(controller);
 
 // wave 3
 
-const itemPortfolio3 = document.querySelectorAll('.wave3')
+const itemPortfolio3 = document.querySelectorAll('.wave3');
 
 const tlPortfolio3 = new TimelineMax();
 
-tlPortfolio3
-.staggerFrom(itemPortfolio3, 1, {opacity: 0}, 0.2, '-=0.5')
+tlPortfolio3.staggerFrom(itemPortfolio3, 1, { opacity: 0 }, 0.2, '-=0.5');
 
 const scene4 = new ScrollMagic.Scene({
-    triggerElement: itemPortfolio2,
-    triggerHook: 0.2,
-    reverse: false
+  triggerElement: itemPortfolio2,
+  triggerHook: 0.2,
+  reverse: false,
 })
-.setTween(tlPortfolio3)
-// .addIndicators()
-.addTo(controller)
+  .setTween(tlPortfolio3)
+  // .addIndicators()
+  .addTo(controller);
+
+// *******************************************
+// ******** Skills Section Animations ********
+// *******************************************
+
+const skillsSection = document.querySelector('.skills');
+const titleComp = document.querySelector('.skills-title');
+const allLabel = document.querySelectorAll('.skill-label');
+const allPourcent = document.querySelectorAll('.skill-number');
+const allBars = document.querySelectorAll('.skill-bar');
+const allShadowBars = document.querySelectorAll('.grey-bar');
+
+const tlSkills = new TimelineMax();
+
+tlSkills
+  .from(titleComp, { opacity: 0, duration: 0.6 })
+  .staggerFrom(allLabel, 0.5, { y: -50, opacity: 0 }, 0.1, '-=0.5')
+  .staggerFrom(allPourcent, 0.5, { y: -10, opacity: 0 }, 0.1, '-=1')
+  .staggerFrom(allShadowBars, 0.5, { y: -10, opacity: 0 }, 0.1, '-=1')
+  .staggerFrom(allBars, 0.5, { y: -10, opacity: 0 }, 0.1, '-=1');
+
+const scene5 = new ScrollMagic.Scene({
+  triggerElement: skillsSection,
+  reverse: false,
+})
+  .setTween(tlSkills)
+  .addTo(controller);
